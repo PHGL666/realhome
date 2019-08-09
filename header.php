@@ -10,12 +10,20 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo(); ?>" />
+    <meta charset="<?php bloginfo(); ?>"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class(); ?>>
 
 <div id="page" class="wrapper">
+
+    <nav>
+        <?php wp_nav_menu( array(
+            'theme_location' => 'primary',
+            'container_class' => 'ml-auto'
+            // 'depth' => 1,
+        )); ?>
+    </nav>
