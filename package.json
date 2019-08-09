@@ -1,0 +1,17 @@
+{
+  "name": "scratch",
+  "version": "1.0.0",
+  "description": "Thème à partir de presque rien",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass --output-style=compressed --source-map=css/main.css.map scss/main.scss css/main.min.css",
+    "watch": "npm run build && npm run build -- -w"
+  },
+  "author": "Fred Murie",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "node-sass": "^4.9.3",
+    "slick-carousel": "^1.8.1"
+  }
+}

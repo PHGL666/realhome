@@ -1,0 +1,12 @@
+$primary: #c34687;
+$white  : #ffffff;
+$light  : #f8f8f8;
+$dark   : #4d4d4d;
+$font-family-base: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$body-color      : $dark;
+$enable-rounded  : false;
+$border-width    : 2px;
+$navbar-light-color               : lighten($primary, 0.3);
+$navbar-light-hover-color         : $primary;
+$navbar-light-active-color        : $primary;
+$navbar-light-toggler-border-color: $white;
