@@ -28,6 +28,7 @@ function scratch_scripts()
     wp_enqueue_style('googlefont', '//fonts.googleapis.com/css?family=Raleway:500&display=swap');
     wp_enqueue_style('googlefont', '//fonts.googleapis.com/css?family=Raleway:500,700&display=swap');
     wp_enqueue_style('googlefont', '//fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+    wp_enqueue_style('forkawesome', 'https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css');
     wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.min.css');
 
     wp_enqueue_script('jquery');
@@ -36,3 +37,6 @@ function scratch_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'scratch_scripts');
+
+// Register Custome Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
