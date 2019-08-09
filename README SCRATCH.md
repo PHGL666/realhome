@@ -65,6 +65,7 @@ dans header.php + mise à jour du <html> + <meta charset> + <body>
 <div id="page" class="wrapper">
 ```
 + mise à jour du header des 3 balises suivantes :
+
 <html <?php language_attributes(); ?>>
 <meta charset="<?php bloginfo(); ?>" />
 <body <?php body_class();?>>
