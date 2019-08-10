@@ -18,7 +18,10 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="wrapper">
+<div class="container">
+    <div class="row">
+        <div class="offset-sm-1 ml-auto">
+    <div id="page" class="wrapper">
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="navbar-brand mr-auto"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img

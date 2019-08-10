@@ -8,11 +8,12 @@
  *
  */
 
+/*
 $lastposts = get_posts( array(
 	'numberposts' => 5,
 	'post_type'   => 'spot',
 ) );
-
+*/
 get_header();
 ?>
 
@@ -38,7 +39,7 @@ get_header();
 				<?php the_content() ?>
 			<?php endif; ?>
         </article>
-
+<!--
 		<?php foreach ( $lastposts as $post ) : ?>
 			<?php setup_postdata( $post ); ?>
 
@@ -52,6 +53,7 @@ get_header();
 
 		<?php endforeach; ?>
 		<?php wp_reset_postdata(); ?>
+-->
 
 	<?php endwhile; ?>
 	<?php else : ?>
@@ -59,5 +61,5 @@ get_header();
 	<?php endif; ?>
 </main>
 
-<?php get_sidebar('lastposts') ?>
+<?php //get_sidebar() ?>
 <?php get_footer(); ?>
