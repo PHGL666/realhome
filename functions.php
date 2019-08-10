@@ -39,3 +39,19 @@ add_action('wp_enqueue_scripts', 'scratch_scripts');
 
 // Register Custome Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+// Sidebars
+function scratch_widgets_init() {
+    register_sidebar(
+        array (
+            'name' => __( 'Footer', 'scratch' ),
+            'id' => 'sidebar-footer',
+            'description' => __( 'Custom Sidebar', 'scratch' ),
+            'before_widget' => '<section class="widget col-md-6 col-lg-4 d-flex flex-column align-items-center">',
+            'after_widget' => "</section>",
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        )
+    );
+}
+add_action( 'widgets_init', 'scratch_widgets_init' );
