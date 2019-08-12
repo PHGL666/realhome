@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-<main class="py-6">
+<main class="py-5">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -19,19 +19,10 @@ get_header();
             <h1 class="entry-title">
                 <?php the_title(); ?>
             </h1>
-
-            <?php if (has_post_thumbnail()) : ?>
-                <div class="row flex-md-row-reverse">
-                    <div class="col-md-6 col-lg-4">
-                        <?php the_post_thumbnail('thumb-510', array('class'=>'img-fluid')); ?>
-                    </div>
-                    <div class="col-md-6 col-lg-8">
-                        <?php the_content() ?>
-                    </div>
-                </div>
-            <?php else : ?>
+            <div>
                 <?php the_content() ?>
-            <?php endif; ?>
+                <?php the_post_thumbnail() ?>
+            </div>
         </article>
 
     <?php endwhile; ?>
@@ -39,5 +30,6 @@ get_header();
         <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
     <?php endif; ?>
 </main>
+
 <?php get_footer() ?>
 

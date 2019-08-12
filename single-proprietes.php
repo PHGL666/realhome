@@ -14,6 +14,7 @@ get_header();
 ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
     <article class="container">
         <h1 class="entry-title">
             <?php the_title(); ?>
@@ -32,6 +33,7 @@ get_header();
             <?php the_content() ?>
         <?php endif; ?>
     </article>
+
 <?php endwhile; ?>
 <?php else : ?>
     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
