@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The template file for archive
  *
  * ...
  *
@@ -11,25 +11,29 @@
 get_header();
 ?>
 
-<main class="py-6">
+    <main class="py-5 container">
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
 
-        <article class="container" <?php post_class(); ?>>
-            <figure>
-                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'medium' ) ?></a>
-            </figure>
-            <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-            <p><?php the_excerpt() ?></p>
-        </article>
+        <div class="row">
 
-		<?php wp_reset_postdata(); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<?php endwhile; ?>
-	<?php else : ?>
-        <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-	<?php endif; ?>
+                <article class="col-md-6 col-lg-4">
+                    <a href="<?php the_permalink() ?>"><h2 class="entry-title"><?php the_title() ?></h2>
+                        <?php the_post_thumbnail('thumb-510', array('class'=>'img-fluid')); ?>
+                    </a>
+                    <p>
+                        <?php the_excerpt() ?>
+                    </p>
+                </article>
 
-</main>
+            <?php endwhile; ?>
+            <?php else : ?>
+                <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+            <?php endif; ?>
+
+        </div>
+    </main>
 
 <?php get_footer() ?>

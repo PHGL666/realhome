@@ -55,3 +55,15 @@ function scratch_widgets_init() {
     );
 }
 add_action( 'widgets_init', 'scratch_widgets_init' );
+
+// Excerpt
+function scratch_excerpt_more($more)
+{
+    $more = sprintf('...<br><a class="btn btn-outline-primary read-more" href="%1$s">%2$s</a>',
+        get_permalink(get_the_ID()),
+        __('Read More', 'scratch')
+    );
+    return $more;
+}
+
+add_filter('excerpt_more', 'scratch_excerpt_more');
