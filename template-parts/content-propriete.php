@@ -10,20 +10,28 @@
 
 $champ_prix = get_field_object('prix');
 $champ_ville = get_field_object('ville');
+$champ_surface = get_field_object('surface');
+$champ_infos = get_field_object('infos');
+$champ_nbr = get_field_object('nbre_de_pieces');
 ?>
 
-<article <?php post_class('card-propriete-article col-md-6 col-lg-4'); ?>>
-    <a class="card-spot_link" href="<?php the_permalink(); ?>">
-        <figure class="card-propriete-figure mb-0">
+
+<div <?php post_class('card card-propriete-article col-lg-4 col-md-5 col-sm-10'); ?>>
+    <a href="<?php the_permalink(); ?>">
+        <figure class="card-img-top">
             <?= get_the_post_thumbnail($post->ID, 'thumb-555', array('class' => 'img-fluid card-propriete_img')) ?>
         </figure>
-        <p><?= $champ_prix['label'] ?> : <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong></p>
-        <p><?= $champ_ville['label'] ?> : <strong><?= $champ_ville['text'] ?></strong></p>
-        <div class="card-propriete_content p-3">
-            <?php the_title('<h2 class="entry-title h4">', '</h2>'); ?>
-            <p class="card-propriete_excerpt"><?= wp_trim_words(get_the_content(), 20, '...'); ?></p>
-            <button class="card-propriete_btn btn btn-outline-light"><?php _e('Read More', 'scratch') ?></button>
+        <div class="card-body">
+            <h4 class="entry-title"><?php the_title() ?></h4>
         </div>
+        <ul class="list-group align-items-center">
+            <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br>
+            <strong>nom <?= $champ_ville['taxonomy'] ?></strong>
+        </ul>
+        <ul class="card-body d-flex justify-content-between">
+            <strong><?= $champ_surface['value'] ?> <?= $champ_surface['append'] ?></strong>
+            <strong><?= $champ_nbr['value'] ?> <?= $champ_nbr['append'] ?></strong>
+            <strong><?= $champ_infos['value'] ?> <?= $champ_infos['append'] ?></strong>
+        </ul>
     </a>
-</article>
-
+</div>
