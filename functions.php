@@ -67,3 +67,4 @@ function scratch_excerpt_more($more)
 }
 
 add_filter('excerpt_more', 'scratch_excerpt_more');
+
