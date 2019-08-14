@@ -6,7 +6,26 @@
   }
 }
 
+.card-propriete-single-propriete{
+  a:hover {
+    color: #535353;
+    text-decoration: none;
+  }
+}
+
   .entry-title {
-  color: orange;
+  color: #E2574C;
   text-align: center;
+}
+
+.front-proprietes {
+  border: none;
+}
+
+
+// ACTUALITES
+
+// content-actualite.php
+.actualite-title{
+  color: black;
 }

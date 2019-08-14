@@ -12,13 +12,11 @@ get_header();
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="container">
-    <div class="row">
+
         <div>
             <?php the_content() ?>
         </div>
-    </div>
-</div>
+
 
 <?php endwhile; ?>
 <?php else : ?>

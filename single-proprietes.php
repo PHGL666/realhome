@@ -27,9 +27,9 @@ $champ_description = get_field_object('description');
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-    <section class="py-5 front-proprietes container">
+    <section class="py-5 container">
         <h2><?php the_title() ?></h2>
-        <article <?php post_class('card-propriete-article'); ?>>
+        <article <?php post_class('card-propriete-single-propriete'); ?>>
             <a class="card-spot_link" href="<?php the_permalink(); ?>">
                 <div class="row">
                     <figure class="card-propriete-figure mb-0 col-6">
@@ -47,7 +47,7 @@ $champ_description = get_field_object('description');
                         <p><?= $champ_infos['label'] ?>
                             <strong><?= $champ_infos['value'] ?> <?= $champ_infos['append'] ?></strong></p>
                         <hr>
-                        <p><strong><?= $champ_description['value'] ?> <?= $champ_description['append'] ?></strong></p>
+                        <p><?= $champ_description['label'] ?> : <br><strong><?= $champ_description['value'] ?></strong></p>
                     </div>
                     <div class="card-body justify-content-center">
                     </div>

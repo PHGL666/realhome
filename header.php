@@ -20,37 +20,35 @@
 
 <div id="page" class="wrapper">
 
-    <header class="header bg-light text-dark pb-5 pt-3">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="navbar-brand mr-auto"><a href="<?php echo esc_url(home_url('/')); ?>"
-                                                     rel="home"><img
-                                src="<?= get_stylesheet_directory_uri() ?>/images/logo.svg"
-                                alt="<?php bloginfo('name'); ?>"></a></div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <header class="header bg-light text-dark pb-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="navbar-brand mr-auto"><a href="<?php echo esc_url(home_url('/')); ?>"
+                                                 rel="home"><img
+                            src="<?= get_stylesheet_directory_uri() ?>/images/logo.svg"
+                            alt="<?php bloginfo('name'); ?>"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <?php wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        //'container' => 'div',
-                        'container_class' => 'mx-auto',
-                        'container_id' => 'navbarNav',
-                        'menu_class' => 'navbar-nav ml-auto',
-                        'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-                        'walker' => new WP_Bootstrap_Navwalker(),
-                        // 'depth' => 1,
-                    )); ?>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'primary',
+                    //'container' => 'div',
+                    'container_class' => 'mx-auto',
+                    'container_id' => 'navbarNav',
+                    'menu_class' => 'navbar-nav ml-auto',
+                    'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker' => new WP_Bootstrap_Navwalker(),
+                    // 'depth' => 1,
+                )); ?>
 
-                    <?php wp_nav_menu(array(
-                        'theme_location' => 'social',
-                    ));
-                    ?>
-                </div>
-            </nav>
-        </div>
+                <?php wp_nav_menu(array(
+                    'theme_location' => 'social',
+                ));
+                ?>
+            </div>
+        </nav>
     </header>
 
 

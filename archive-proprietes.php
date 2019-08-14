@@ -30,6 +30,8 @@ $champ_nbr = get_field_object('nbre_de_pieces');
             ?>
 
         <?php endwhile; ?>
+        <!-- PAGNIATION +SCSS MAIS NE FONCTIONNE PAS-->
+            <?php the_posts_pagination(); ?>
         <?php else : ?>
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
