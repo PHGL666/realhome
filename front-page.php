@@ -21,10 +21,13 @@ get_header();
 -->
 
     <main>
-        <div>
+        <div class="container">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article <?php post_class(); ?>>
-                    <div class="py-5">
+                    <div>
+                        <?= get_the_post_thumbnail() ?>
+                    </div>
+                    <div class="">
                         <?php the_content() ?>
                     </div>
                 </article>

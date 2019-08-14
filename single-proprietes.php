@@ -61,9 +61,7 @@ $champ_description = get_field_object('description');
     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 <?php endif; ?>
 
-
 <section>
-
 
     <div class="container">
         <?php the_archive_title('<h2 class="page-title">', '</h2>'); ?>

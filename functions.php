@@ -17,8 +17,10 @@ function scratch_setup()
     );
 
     // Custom Image sizes
-    add_image_size('thumb-510', 510, 205, true);
-    add_image_size('thumb-1000', 1000, 600, true);
+    add_image_size('thumb-510', 500, 200, true);
+    add_image_size('thumb-550', 550, 300, true);
+    add_image_size('thumb-900', 900, 600, true);
+    add_image_size('thumb-1100', 1100, 850, true);
 }
 
 add_action('after_setup_theme', 'scratch_setup');
@@ -29,12 +31,10 @@ function scratch_scripts()
     wp_enqueue_style('Raleway', 'https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
     wp_enqueue_style('Playfair', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
     wp_enqueue_style('forkawesome', 'https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css');
-    wp_enqueue_style('leaflet', get_template_directory_uri() . '/node_modules/leaflet/dist/leaflet.css'); // POUR LA CARTE
     wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.min.css');
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js');
-    wp_enqueue_script('leaflet', get_template_directory_uri() . '/node_modules/leaflet/dist/leaflet.js', 'jquery', true);
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js');
 }
 
@@ -73,6 +73,14 @@ function scratch_widgets_single_actualite() {
     );
 }
 add_action( 'widgets_init', 'scratch_widgets_single_actualite' );
+
+
+// AJOUTER DES CATEGORIES AU WIDGET
+function add_categories_to_pages() {
+    register_taxonomy_for_object_type( 'category', 'proprietes' );
+    register_taxonomy_for_object_type( 'category', 'actualites' );
+}
+add_action( 'init', 'add_categories_to_pages' );
 
 // Excerpt
 function scratch_excerpt_more($more)

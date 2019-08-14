@@ -8,7 +8,8 @@
  *
  */
 $champ_date = get_field_object('date');
-$champ_corps = get_field_object('corps');
+$champ_texte = get_field_object('texte');
+
 get_header();
 ?>
 
@@ -21,10 +22,10 @@ get_header();
                 </a>
                 <?= $champ_date['value'] ?><?= $champ_date['date'] ?>
                 <figure>
-                    <?= get_the_post_thumbnail($post->ID, 'thumb-1000', array('class' => 'img-fluid card-propriete_img')) ?>
+                    <?= get_the_post_thumbnail($post->ID, 'thumb-900', array('class' => 'img-fluid card-propriete_img')) ?>
                 </figure>
                 <div class="text-justify">
-                    <?= $champ_corps['value'] ?>
+                    <?= $champ_texte['value'] ?>
                 </div>
             <?php endwhile; ?>
             <?php else : ?>

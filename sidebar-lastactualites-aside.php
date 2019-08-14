@@ -22,6 +22,7 @@ $lastspots = get_posts(array(
 
         <?php if ($lastspots) : ?>
             <div class="spots-grid">
+
                 <?php foreach ($lastspots as $post) :
                     setup_postdata($post);
 

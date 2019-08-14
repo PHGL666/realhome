@@ -17,7 +17,7 @@ $champ_infos = get_field_object('infos');
 $champ_nbr = get_field_object('nbre_de_pieces');
 ?>
 
-<main class="py-5 container">
+<main class="container">
 
     <?php the_archive_title('<h1 class="page-title">', '</h1>') ?>
 
@@ -30,11 +30,14 @@ $champ_nbr = get_field_object('nbre_de_pieces');
             ?>
 
         <?php endwhile; ?>
-        <!-- PAGNIATION +SCSS MAIS NE FONCTIONNE PAS-->
-            <?php the_posts_pagination(); ?>
         <?php else : ?>
+
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
+        <!-- PAGINATION-->
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <?php the_posts_pagination(); ?>
     </div>
 </main>
 

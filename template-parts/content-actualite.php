@@ -9,7 +9,7 @@
  */
 
 $champ_date = get_field_object('date');
-$champ_corps = get_field_object('corps');
+$champ_texte = get_field_object('texte');
 ?>
 
 <div class="my-5">
@@ -18,14 +18,16 @@ $champ_corps = get_field_object('corps');
     </a>
     <?= $champ_date['value'] ?><?= $champ_date['date'] ?>
     <figure>
-        <?= get_the_post_thumbnail($post->ID, 'thumb-1000', array('class' => 'img-fluid card-propriete_img')) ?>
+        <?= get_the_post_thumbnail($post->ID, 'thumb-900', array('class' => 'img-fluid card-propriete_img')) ?>
 
     </figure>
     <div class="text-justify">
-       <?= wp_trim_words($champ_corps['value'], 20, '...'); ?>
-       <?php the_excerpt(); ?>
+        <?= wp_trim_words($champ_texte['value'], 20, '...'); ?>
     </div>
-    <button class="card-spot_btn btn btn-outline-warning"><?php _e('Lire la suite', 'scratch') ?></button>
+    <a class="card-propriete_btn btn btn-success mt-2"
+       href="<?php the_permalink(); ?>"><?php _e('Lire la suite', 'scratch') ?></a>
+    <!--<button class="card-spot_btn btn btn-outline-succes"><?php //_e('Lire la suite', 'scratch') ?></button>-->
+
 </div>
 
 
