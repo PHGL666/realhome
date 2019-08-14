@@ -21,14 +21,21 @@ get_header();
 -->
 
     <main>
-        <div class="container">
+        <div>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article <?php post_class(); ?>>
+
                     <div>
                         <?= get_the_post_thumbnail() ?>
                     </div>
-                    <div class="">
-                        <?php the_content() ?>
+
+                    <div class="pt-5">
+                        <?php
+                        get_template_part('template-parts/content', 'front');
+                        ?>
+                        <?php
+                        get_template_part('template-parts/content', 'barre-grise');
+                        ?>
                     </div>
                 </article>
             <?php endwhile; ?>
@@ -38,6 +45,13 @@ get_header();
         </div>
 
         <div class="container">
+            <?php the_archive_title('<h1 class="page-title text-center">', '</h1>') ?>
+            <div class="div-rouge col-md-2 offset-md-5 my-2">
+            </div>
+            <div class="text-justify col-md-6 offset-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor natus nihil perspiciatis repudiandae
+                sit suscipit unde! Aliquid consequuntur eum explicabo.
+            </div>
             <div class="row">
                 <?php if ($lastproprietes) : ?>
                 <?php foreach ($lastproprietes as $post) :
@@ -46,11 +60,11 @@ get_header();
                 endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </div>
-            <?php endif; ?>
+        <?php endif; ?>
 
             <div class="text-center">
                 <a href="<?= esc_url(home_url('/')) ?>/proprietes/"
-                   class="btn btn-success my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
+                   class="btn btn-outline-danger my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
             </div>
     </main>
 

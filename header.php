@@ -20,9 +20,9 @@
 
 <div id="page" class="wrapper">
 
-    <header class="header bg-light text-dark pb-5">
+    <header class="header text-dark">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="navbar-brand mr-auto"><a href="<?php echo esc_url(home_url('/')); ?>"
+            <div class="navbar-brand mx-5 py-4"><a href="<?php echo esc_url(home_url('/')); ?>"
                                                  rel="home"><img
                             src="<?= get_stylesheet_directory_uri() ?>/images/logo.svg"
                             alt="<?php bloginfo('name'); ?>"></a></div>

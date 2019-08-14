@@ -77,7 +77,7 @@ $champ_description = get_field_object('description');
 
         <div class="text-center">
             <a href="<?= esc_url(home_url('/')) ?>/proprietes/"
-               class="btn btn-success my-5"><?php _e('Toutes nos propriétés', 'scratch'); ?></a>
+               class="btn btn-outline-danger my-5"><?php _e('Toutes nos propriétés', 'scratch'); ?></a>
         </div>
 </section>
 

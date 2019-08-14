@@ -23,6 +23,7 @@ $champ_texte = get_field_object('texte');
     </figure>
     <div class="text-justify">
         <?= wp_trim_words($champ_texte['value'], 20, '...'); ?>
+        <p><?php the_excerpt() ?></p>
     </div>
     <a class="card-propriete_btn btn btn-success mt-2"
        href="<?php the_permalink(); ?>"><?php _e('Lire la suite', 'scratch') ?></a>
