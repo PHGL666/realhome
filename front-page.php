@@ -48,7 +48,7 @@ get_header();
             <?php the_archive_title('<h1 class="page-title text-center">', '</h1>') ?>
             <div class="div-rouge col-md-2 offset-md-5 my-2">
             </div>
-            <div class="text-justify col-md-6 offset-3">
+            <div class="text-center col-md-6 offset-3 mb-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor natus nihil perspiciatis repudiandae
                 sit suscipit unde! Aliquid consequuntur eum explicabo.
             </div>

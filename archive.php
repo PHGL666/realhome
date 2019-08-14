@@ -24,9 +24,7 @@ $champ_texte = get_field_object('texte');
             <?php if (have_posts()) : while (have_posts()) :
                 the_post(); ?>
 
-                <?php
-                get_template_part('template-parts/content', 'actualite');
-                ?>
+                <?php get_template_part('template-parts/content', 'actualite'); ?>
 
             <?php endwhile; ?>
             <?php else : ?>
