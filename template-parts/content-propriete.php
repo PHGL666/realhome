@@ -20,7 +20,7 @@ $champ_nbr = get_field_object('nbre_de_pieces');
     <div <?php post_class('card card-propriete-article my-2'); ?>>
         <a href="<?php the_permalink(); ?>">
             <figure class="card-img-top">
-                <?= get_the_post_thumbnail($post->ID, 'thumb-550', array('class' => 'img-fluid card-propriete_img py-1 px-1')) ?>
+                <?= get_the_post_thumbnail($post->ID, 'thumb-550', array('class' => 'img-fluid card-propriete_img')) ?>
             </figure>
             <div class="card-body">
                 <h4 class="entry-title"><?php the_title() ?></h4>

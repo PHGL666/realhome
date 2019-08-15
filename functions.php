@@ -65,9 +65,9 @@ function scratch_widgets_single_actualite() {
             'name' => __( 'Side', 'scratch' ),
             'id' => 'aside-single-actualite',
             'description' => __( 'Custom Sidebar', 'scratch' ),
-            'before_widget' => '<section class="widget col-md-4 col-lg-3 d-flex flex-column align-items-center">',
+            'before_widget' => '<section>',
             'after_widget' => "</section>",
-            'before_title' => '<h3 class="widget-title">',
+            'before_title' => '<h3>',
             'after_title' => '</h3>',
         )
     );
