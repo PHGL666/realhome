@@ -34,9 +34,9 @@ function scratch_scripts()
     wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.min.css');
 
     wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery.bootstrap.min', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js', 'jquery', true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js');
-    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js');
-}
+    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', 'jquery', '1.0.0', true);}
 
 add_action('wp_enqueue_scripts', 'scratch_scripts');
 
@@ -83,28 +83,7 @@ function add_categories_to_pages() {
 add_action( 'init', 'add_categories_to_pages' );
 
 /**
- * More link
- */
-// add_filter('excerpt_more', function () {
-//   return '&hellip; <div class="more-link"><a class="btn btn-outline-primary" href="' . get_permalink() . '" >' . __( 'Read More', 'scratch' ) . '</a></div>';
-// });
-add_filter('excerpt_more', function () {
-    return '&hellip;';
-});
-add_filter('get_the_excerpt', function ($excerpt) {
-    $excerpt_more = '<div class="more-link"><a class="btn btn-outline-primary" href="' . get_permalink() . '" >' . __('Lire la suite', 'scratch') . '</a></div>';
-    return $excerpt . $excerpt_more;
-});
-
-/**
- * Excerpt length / limite le nombre de mot lorsqu'on fait un extrait
- */
-add_filter('excerpt_length', function ($length) {
-    return 36;
-}, 999);
-
-/**
- * Archive spots filtering
+ * ARCHIVE PROPRIETES FILTERING
  */
 add_action('pre_get_posts', 'my_pre_get_posts');
 
@@ -127,11 +106,35 @@ function my_pre_get_posts($query)
                     'compare' => 'IN',
                 )
             ));
-
         }
-
     }
-
     // always return
     return;
 }
+
+/* TITRE DES ARCHIVES */
+function my_theme_archive_title($title)
+{
+    if (is_category()) {
+        if (is_category('')) {
+            $title = __('Nos actualités', 'scratch');
+        } else {
+            $title = single_cat_title(__('Nos actualités - ', 'scratch'), false);
+        }
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif (is_post_type_archive()) {
+        if (get_post_type() == 'proprietes') {
+            $title = __('Nos propriétés', 'scratch');
+        } else {
+            $title = post_type_archive_title('', false);
+        }
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}
+
+add_filter('get_the_archive_title', 'my_theme_archive_title');

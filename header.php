@@ -34,13 +34,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <?php wp_nav_menu(array(
                     'theme_location' => 'primary',
-                    //'container' => 'div',
                     'container_class' => 'mx-auto',
                     'container_id' => 'navbarNav',
                     'menu_class' => 'navbar-nav ml-auto',
                     'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                     'walker' => new WP_Bootstrap_Navwalker(),
-                    // 'depth' => 1,
                 )); ?>
 
                 <?php wp_nav_menu(array(

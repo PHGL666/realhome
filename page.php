@@ -59,7 +59,7 @@ get_header();
             </div>
     </div>
 
-        <div class="container d-flex flex-row mt-5">
+        <div class="container mt-5">
             <h1>Nos partenaires</h1>
             <div class="row">
                 <div class="col">
@@ -68,7 +68,6 @@ get_header();
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner3.png" />
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner4.png" />
                 </div>
-
             </div>
         </div>
 

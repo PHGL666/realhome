@@ -13,6 +13,9 @@ $champ_ville = get_field_object('ville');
 $champ_surface = get_field_object('surface');
 $champ_infos = get_field_object('infos');
 $champ_nbr = get_field_object('nbre_de_pieces');
+//FILTRES
+$ville_array = get_field_object('ville')['choices'];
+$values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
 ?>
 
 
@@ -27,8 +30,9 @@ $champ_nbr = get_field_object('nbre_de_pieces');
             </div>
             <ul class="list-group align-items-center">
                 <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br>
-                <strong><?= $champ_ville['value'] ?></strong>
+                <strong><?= $champ_ville['choices'][$champ_ville['value']] ?></strong>
             </ul>
+
             <ul class="card-body d-flex justify-content-between">
                 <strong><?= $champ_surface['value'] ?> <?= $champ_surface['append'] ?></strong>
                 <strong><?= $champ_nbr['value'] ?> <?= $champ_nbr['append'] ?></strong>

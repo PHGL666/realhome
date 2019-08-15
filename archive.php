@@ -34,7 +34,7 @@ $champ_texte = get_field_object('texte');
                 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-12 pl-5 pt-5 text-left">
+        <div class="aside-categories col-lg-3 col-md-3 col-sm-12 pl-5 pt-5 text-left">
             <?php dynamic_sidebar('aside-single-actualite'); ?>
         </div>
     </div>

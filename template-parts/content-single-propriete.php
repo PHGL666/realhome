@@ -9,10 +9,8 @@
  */
 
 $champ_prix = get_field_object('prix');
-$champ_ville = get_field_object('ville');
-$champ_surface = get_field_object('surface');
-$champ_infos = get_field_object('infos');
-$champ_nbr = get_field_object('nbre_de_pieces');
+$ville_array = get_field_object('ville')['choices'];
+$values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
 ?>
 
 <div class="col-lg-3 col-md-6 col-sm-12">
@@ -25,7 +23,7 @@ $champ_nbr = get_field_object('nbre_de_pieces');
                 <h4 class="entry-title"><?php the_title() ?></h4>
             </div>
             <ul class="list-group align-items-center">
-                <strong><?= $champ_ville['value'] ?></strong>
+                <strong><?= $champ_ville['choices'][$champ_ville['value']] ?></strong>
                 <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br>
             </ul>
         </a>

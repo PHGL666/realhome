@@ -1,3 +1,19 @@
+// content-actualite.
+.actualite-title{
+  color: black;
+}
+
+// front-page & page
+.barre-grise {
+  background-color: #dedede;
+}
+
+.div-rouge {
+  border-bottom: solid 3px;
+  color: orangered;
+}
+
+// cards propriete
 .card-propriete-article {
   box-shadow: 1px 1px 4px 0px rgba(163,163,163,1);
   a:hover {
@@ -22,21 +38,8 @@
   border: none;
 }
 
+// content-single-propriete
 
-// ACTUALITES
-
-// content-actualite.php
-.actualite-title{
-  color: black;
-}
-
-
-
-.barre-grise {
-  background-color: #dedede;
-}
-
-.div-rouge {
-  border-bottom: solid 3px;
+.title-price-orangered {
   color: orangered;
 }

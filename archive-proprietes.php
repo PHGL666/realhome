@@ -18,7 +18,7 @@ $champ_nbr = get_field_object('nbre_de_pieces');
 
 // FILTRE
 $ville_array = get_field_object('ville')['choices'];
-$values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
+$values = isset($_GET['villes']) ? (array) $_GET['villes'] : [];
 ?>
 
 <main class="container">
@@ -27,17 +27,18 @@ $values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
 
     <aside class="aside-filter mb-5 p-3">
         <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="get" class="archive-filter-form form-inline">
-            <h3 class="mb-lg-0 mr-4"><?php _e('Filtrer par niveau : ', 'scratch'); ?></h3>
+            <h3 class="mb-lg-0 mr-4"><?php _e('Filtrer par ville(s) : ', 'scratch'); ?></h3>
             <?php foreach($ville_array as $key => $ville) : ?>
                 <div class="form-check form-check-inline">
-                    <input type="checkbox" name="niveau[]" value="<?= $key ?>" id="niveau-<?= $key ?>" <?php if(in_array($key, $values)): ?>checked<?php endif; ?> class="spot-filters-field form-check-input">
-                    <label for="niveau-<?= $key ?>" class="form-check-label"><?= $ville ?></label>
+                    <input type="checkbox" name="villes[]" value="<?= $key ?>" id="villes-<?= $key ?>" <?php if(in_array($key, $values)): ?>checked<?php endif; ?> class="spot-filters-field form-check-input">
+                    <label for="villes-<?= $key ?>" class="form-check-label"><?= $ville ?></label>
                 </div>
             <?php endforeach; ?>
             <button class="btn btn-outline-primary ml-auto" type="submit">Filtrer</button>
         </form>
     </aside>
 
+    <?php //print_r($champ_ville); ?>
     <div class="row">
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

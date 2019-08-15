@@ -1,3 +1,16 @@
+// sidebar category archive
+.aside-categories {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li li {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
 /* Pagination */
 .screen-reader-text {
   display: none;
@@ -45,3 +58,4 @@
     }
   }
 }
+

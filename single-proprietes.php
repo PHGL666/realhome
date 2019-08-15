@@ -22,6 +22,8 @@ $champ_surface = get_field_object('surface');
 $champ_infos = get_field_object('infos');
 $champ_nbr = get_field_object('nbre_de_pieces');
 $champ_description = get_field_object('description');
+$ville_array = get_field_object('ville')['choices'];
+$values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
 ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -36,10 +38,12 @@ $champ_description = get_field_object('description');
                         <?= get_the_post_thumbnail($post->ID, 'thumb-555', array('class' => 'img-fluid card-propriete_img')) ?>
                     </figure>
                     <div class="col-6">
-                        <p><?= $champ_prix['label'] ?> :
-                            <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br></p>
+                        <h2 class="title-price-orangered">
+                            <i class="fa fa-money" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+                            <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br>
+                        </h2>
                         <hr>
-                        <p><?= $champ_ville['label'] ?> : <strong><?= $champ_ville['taxonomy'] ?></strong></p>
+                        <p><?= $champ_ville['label'] ?> : <strong><?= $champ_ville['choices'][$champ_ville['value']] ?></strong></p>
                         <p><?= $champ_surface['label'] ?>
                             <strong><?= $champ_surface['value'] ?> <?= $champ_surface['append'] ?></strong></p>
                         <p><?= $champ_nbr['label'] ?>
@@ -47,7 +51,7 @@ $champ_description = get_field_object('description');
                         <p><?= $champ_infos['label'] ?>
                             <strong><?= $champ_infos['value'] ?> <?= $champ_infos['append'] ?></strong></p>
                         <hr>
-                        <p><?= $champ_description['label'] ?> : <br><strong><?= $champ_description['value'] ?></strong></p>
+                        <p><?= $champ_description['value'] ?></p>
                     </div>
                     <div class="card-body justify-content-center">
                     </div>
