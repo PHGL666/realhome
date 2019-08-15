@@ -18,48 +18,57 @@ get_header();
     get_template_part('template-parts/content', 'barre-grise');
     ?>
 
-        <div class="container py-5 my-5">
-            <div class="row ">
-                <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+    <div class="container py-5 my-5">
+        <h1>Notre équipe</h1>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/equipe-1.jpg" alt="#"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Maria Spielberg</h5>
+                        <p class="card-text">Manager</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/equipe-2.jpg" alt="#"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Stan Barnard</h5>
+                        <p class="card-text">Agent</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/equipe-3.jpg" alt="#"/>
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Agent</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 text-center">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/equipe-4.jpg" alt="#"/>
+                    <div class="card-body">
+                        <h5 class="card-title">Bill Muray</h5>
+                        <p class="card-text">Commercial</p>
                     </div>
                 </div>
+            </div>
+    </div>
+
+        <div class="container d-flex flex-row mt-5">
+            <h1>Nos partenaires</h1>
+            <div class="row">
+                <div class="col">
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner1.png" />
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner2.png" />
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner3.png" />
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner4.png" />
+                </div>
+
             </div>
         </div>
 

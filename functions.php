@@ -82,18 +82,19 @@ function add_categories_to_pages() {
 }
 add_action( 'init', 'add_categories_to_pages' );
 
-// Excerpt
-function scratch_excerpt_more($more)
-{
-    $more = sprintf('...<br><a class="btn btn-outline-primary read-more" href="%1$s">%2$s</a>',
-        get_permalink(get_the_ID()),
-        __('Lire la suite', 'scratch')
-    );
-    return $more;
-}
-
-add_filter('excerpt_more', 'scratch_excerpt_more');
-
+/**
+ * More link
+ */
+// add_filter('excerpt_more', function () {
+//   return '&hellip; <div class="more-link"><a class="btn btn-outline-primary" href="' . get_permalink() . '" >' . __( 'Read More', 'scratch' ) . '</a></div>';
+// });
+add_filter('excerpt_more', function () {
+    return '&hellip;';
+});
+add_filter('get_the_excerpt', function ($excerpt) {
+    $excerpt_more = '<div class="more-link"><a class="btn btn-outline-primary" href="' . get_permalink() . '" >' . __('Lire la suite', 'scratch') . '</a></div>';
+    return $excerpt . $excerpt_more;
+});
 
 /**
  * Excerpt length / limite le nombre de mot lorsqu'on fait un extrait
@@ -101,3 +102,36 @@ add_filter('excerpt_more', 'scratch_excerpt_more');
 add_filter('excerpt_length', function ($length) {
     return 36;
 }, 999);
+
+/**
+ * Archive spots filtering
+ */
+add_action('pre_get_posts', 'my_pre_get_posts');
+
+function my_pre_get_posts($query)
+{
+    // validate
+    if (is_admin()) return;
+
+    if (!$query->is_main_query()) return;
+
+    if (is_post_type_archive('proprietes')) {
+
+        if (isset($_GET['ville'])) {
+
+            $query->set('meta_key', 'ville');
+            $query->set('meta_query', array(
+                array(
+                    'key' => 'ville',
+                    'value' => $_GET['ville'],
+                    'compare' => 'IN',
+                )
+            ));
+
+        }
+
+    }
+
+    // always return
+    return;
+}

@@ -25,8 +25,8 @@ get_header();
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <article <?php post_class(); ?>>
 
-                    <div>
-                        <?= get_the_post_thumbnail() ?>
+                    <div class="front-img-bg img-fluid">
+
                     </div>
 
                     <div class="pt-5">
@@ -45,7 +45,7 @@ get_header();
         </div>
 
         <div class="container">
-            <?php the_archive_title('<h1 class="page-title text-center">', '</h1>') ?>
+            <?php the_archive_title('<h2 class="page-title text-center">', '</h2>') ?>
             <div class="div-rouge col-md-2 offset-md-5 my-2">
             </div>
             <div class="text-center col-md-6 offset-3 mb-3">

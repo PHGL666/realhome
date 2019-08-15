@@ -1,0 +1,4 @@
+.h1_primary {
+  font-size: 1.5rem;
+  @include undertitle(30px, 3px, $dark);
+}
