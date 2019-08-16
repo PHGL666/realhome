@@ -14,6 +14,7 @@ $champ_date = get_field_object('date');
 $champ_texte = get_field_object('texte');
 ?>
 
+
 <main class="container">
 
     <?php the_archive_title('<h2 class="page-title text-center pt-5">', '</h2>') ?>

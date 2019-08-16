@@ -24,7 +24,7 @@ $values = isset($_GET['ville']) ? (array) $_GET['ville'] : [];
             </div>
             <ul class="list-group align-items-center">
                 <strong><?= $champ_ville['choices'][$champ_ville['value']] ?></strong>
-                <strong><?= $champ_prix['value'] ?> <?= $champ_prix['append'] ?></strong><br>
+                <strong><?= number_format($champ_prix['value'], 0, ',', ' ') ?> <?= $champ_prix['append'] ?></strong><br>
             </ul>
         </a>
     </div>
