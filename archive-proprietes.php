@@ -23,7 +23,7 @@ $values = isset($_GET['villes']) ? (array) $_GET['villes'] : [];
 
 <main class="container">
 
-    <?php the_archive_title('<h2 class="page-title text-center pt-5">', '</h2>') ?>
+    <?php the_archive_title('<h1 class="page-title text-center pt-5">', '</h1>') ?>
 
     <aside class="aside-filter mb-5 p-3">
         <form action="<?= $_SERVER['REQUEST_URI'] ?>" method="get" class="archive-filter-form form-inline">
