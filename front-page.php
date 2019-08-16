@@ -45,7 +45,8 @@ get_header();
         </div>
 
         <div class="container">
-            <?php the_archive_title('<h2 class="page-title text-center">', '</h2>') ?>
+            <h2 class="text-center">Nos propriétés</h2>
+            <?php //the_title('<h2 class="page-title text-center">', '</h2>') ?>
 
             <div class="row d-flex flex-column">
                 <div class="div-rouge col-md-2 offset-md-5 my-2">
@@ -71,7 +72,4 @@ get_header();
                    class="btn btn-outline-danger my-5"><?php _e('Toutes les propriétés', 'scratch'); ?></a>
             </div>
     </main>
-
-
-<?php //get_sidebar('lastposts') ?>
 <?php get_footer(); ?>

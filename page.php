@@ -67,6 +67,8 @@ get_header();
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner2.png" />
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner3.png" />
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner4.png" />
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner2.png" />
+                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/images/partner1.png" />
                 </div>
             </div>
         </div>

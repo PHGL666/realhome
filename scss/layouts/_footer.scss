@@ -1,27 +1,41 @@
+#menu-menu-principal-1 {
+  text-align: left;
+  list-style: none;
+  a {
+    color: white;
+  }
+}
 
-#menu-menu-social-1{
-  ul{
-    list-style: none;
+#menu-menu-social-1 {
+  list-style: none;
+
+  ul {
     padding: 0;
     margin: 0;
     display: flex;
   }
-  .menu-item{
+
+  .menu-item {
     margin: 15px;
     font-size: 0;
-    a::before{
+
+    a::before {
       content: '\f081';
       font-family: 'ForkAwesome';
       font-size: 2rem;
       color: white;
     }
-    &.menu-item-21 a::before{
+
+    &.menu-item-21 a::before {
       content: '\f082';
       color: white;
     }
-    &.menu-item-22 a::before{
+
+    &.menu-item-22 a::before {
       content: '\f16d';
       color: white;
     }
   }
 }
+
+

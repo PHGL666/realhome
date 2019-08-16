@@ -14,7 +14,7 @@ $champ_texte = get_field_object('texte');
 
 <div class="mt-5 mb-2">
     <a href="<?php the_permalink(); ?>">
-        <h4 class="actualite-title"><?php the_title() ?></h4>
+        <h2 class="actualite-title"><?php the_title() ?></h2>
     </a>
     <?= $champ_date['value'] ?><?= $champ_date['date'] ?>
     <figure>

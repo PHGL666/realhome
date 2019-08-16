@@ -17,7 +17,7 @@ $champ_texte = get_field_object('texte');
 
 <main class="container">
 
-    <?php the_archive_title('<h2 class="page-title text-center pt-5">', '</h2>') ?>
+    <?php the_archive_title('<h1 class="page-title text-center pt-5">', '</h1>') ?>
 
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-12">

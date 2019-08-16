@@ -50,7 +50,7 @@ function scratch_widgets_init() {
             'name' => __( 'Footer', 'scratch' ),
             'id' => 'sidebar-footer',
             'description' => __( 'Custom Sidebar', 'scratch' ),
-            'before_widget' => '<section class="widget col-md-6 col-lg-4 d-flex flex-column align-items-center">',
+            'before_widget' => '<section class="widget col-md-6 col-lg-4">',
             'after_widget' => "</section>",
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>',
@@ -96,13 +96,13 @@ function my_pre_get_posts($query)
 
     if (is_post_type_archive('proprietes')) {
 
-        if (isset($_GET['ville'])) {
+        if (isset($_GET['villes'])) {
 
             $query->set('meta_key', 'ville');
             $query->set('meta_query', array(
                 array(
                     'key' => 'ville',
-                    'value' => $_GET['ville'],
+                    'value' => $_GET['villes'],
                     'compare' => 'IN',
                 )
             ));

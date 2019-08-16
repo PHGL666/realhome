@@ -1,11 +1,11 @@
-.navbar{
-  box-shadow: 0px 4px 4px 0px rgba(171,171,171,1);
-  font-size: 1.2rem;
-  font-family: "Playfair Display";
+a:hover {
+  background-color: #efefef;
 }
 
-.navbar-brand {
-  width: 180px;
+#menu-menu-principal {
+  li {
+    margin: 20px;
+  }
 }
 
 .menu-menu-social-container{
@@ -34,3 +34,14 @@
     }
   }
 }
+
+.navbar{
+  box-shadow: 0px 4px 4px 0px rgba(171,171,171,1);
+  font-size: 1.2rem;
+  font-family: "Playfair Display";
+}
+
+.navbar-brand {
+  width: 180px;
+}
+

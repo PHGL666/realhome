@@ -1,7 +1,7 @@
 </div><!-- #page -->
 
 <footer class="footer bg-dark text-white py-2">
-    <div class="containermx-5 py-4 ">
+    <div class="container mx-5 py-4 ">
         <div class="col">
             <div class="navbar-brand">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
